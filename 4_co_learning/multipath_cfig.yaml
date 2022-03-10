@@ -1,0 +1,68 @@
+label_csv: 'data/20210615_nopassword.csv'
+
+
+
+exclude_source: []  
+
+
+
+data_path: {'mcl': "/nfs/masi/gaor2/data/MCL/clinical_mcl/featnpy128", 'mclbackup': '/nfs/masi/gaor2/data/MCL/clinical_mcl/error0605_backup/featnpy128', 'nlst': '/nfs/masi/gaor2/data/NLST/Clinical_forspore/KaggleTrained/featnpy128'}
+
+
+
+
+lastscan: False  
+
+save_path: "/nfs/masi/gaor2/saved_file/mcl2021/justtest"
+start_epoch: 0
+max_epoch: 100
+val_phase: 1
+
+
+onlyboth: False
+
+
+
+n_factor: 10
+
+batch_size: 200
+test_batch_size: 200
+sample_size: 64
+lr: 0.01
+lr_gamma: 0.2
+momentum: 0.9
+
+iseval: True
+
+weight_decay: 0.0001
+time: 2
+use_exist_model: False
+savemodel: True
+add_positive: False
+adjust_lr: True
+steps: [ 60, 80]
+drop: True
+add_more: False
+
+external_test: True
+
+loader_name: MultiPath_loader 
+
+model_name: MultipathModelBL 
+dim: 5
+
+img_alpha: 1
+clic_alpha: 1
+both_alpha: 1
+center_weight: 0.05
+
+gt_reg: True
+
+test_csv_path: '/nfs/masi/gaor2/saved_file/Clinical_spore/Clinical_mcl/multipath/BLdim3/val3/val3_c3_60clic.csv'
+test_epoch: 60
+test_phase: 'c3'
+
+loss_name: weight_bceloss
+
+
+
