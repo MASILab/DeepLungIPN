@@ -1,6 +1,6 @@
 # DeepLungIPN Overview
 
-This is the Deep Learning Open-source Lung cancer risk estimation repository, with PyTorch implementations. We prevoide source code, running tutorial, pre-trained model, [example image](https://drive.google.com/drive/folders/1gyKfWa_vmI_0K0dZ_lBUynCnOJhy3dKU?usp=sharing) in this repository, some codes are borrowed from our [screening study repository] (https://github.com/MASILab/DeepLungScreening).
+This is the Deep Learning Open-source Lung cancer risk estimation repository, with PyTorch implementations. We prevoide source code, running tutorial, pre-trained model, [example image](https://drive.google.com/drive/folders/1gyKfWa_vmI_0K0dZ_lBUynCnOJhy3dKU?usp=sharing) in this repository, some codes are borrowed from our [screening study repository](https://github.com/MASILab/DeepLungScreening).
 
 
 # Tutorial
@@ -13,23 +13,23 @@ The whole pipline are shown as:
 
 ## step 1: image pre-process
 
-> python3 ./1_preprocess/step1_main.py --sess_csv ${SPLIT_CSV} --prep_root ${PREP_ROOT} --ori_root ${ORI_ROOT} 
+> python3 ./1_preprocess/step1_main.py --sess_csv SPLIT-CSV --prep_root PREP-ROOT --ori_root ORI-ROOT 
 
-```${SPLIT_CSV}``` is the csv file stores the scan list (and meta data) you want to test. 
-```${PREP_ROOT}``` is the data folder saves the pre-processed result.
-```${ORI_ROOT}``` is the data folder stores the scans you want to test.
+```SPLIT_CSV``` is the csv file stores the scan list (and meta data) you want to test. 
+```PREP_ROOT``` is the data folder saves the pre-processed result.
+```ORI_ROOT``` is the data folder stores the scans you want to test.
 
 ## step 2: nodule detection
 
-> python3 ./2_nodule_detection/step2_main.py --sess_csv ${SPLIT_CSV} --bbox_root ${BBOX_ROOT} --prep_root ${PREP_ROOT} 
+> python3 ./2_nodule_detection/step2_main.py --sess_csv SPLIT-CSV --bbox_root BBOX-ROOT --prep_root PREP-ROOT 
 
-```${BBOX_ROOT}``` is the data folder stores the nodule detection results.
+```BBOX_ROOT``` is the data folder stores the nodule detection results.
 
 ## step 3: feature extraction
 
-> python3 ./3_feature_extraction/step3_main.py --sess_csv ${SPLIT_CSV} --bbox_root ${BBOX_ROOT} --prep_root ${PREP_ROOT} --feat_root ${FEAT_ROOT}
+> python3 ./3_feature_extraction/step3_main.py --sess_csv SPLIT-CSV --bbox_root BBOX-ROOT --prep_root PREP-ROOT --feat_root FEAT-ROOT
 
-```${FEAT_ROOT}``` is the data folder stores the image feature results.
+```FEAT-ROOT``` is the data folder stores the image feature results.
 
 ## train the co-learning model 
 
@@ -37,9 +37,9 @@ The whole pipline are shown as:
 
 ## step 4: co-learning of meta data and image
 
-> python3 ./4_co_learning/step4_main.py --sess_csv ${SPLIT_CSV} --feat_root ${FEAT_ROOT} --save_csv_path ${PRED_CSV}
+> python3 ./4_co_learning/step4_main.py --sess_csv SPLIT-CSV --feat_root FEAT-ROOT --save_csv_path PRED-CSV
 
-```${PRED_CSV}``` is the predicted result from deep learning method.
+```PRED-CSV``` is the predicted result from deep learning method.
 
 # Contact 
 
